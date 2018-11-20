@@ -18,6 +18,9 @@ def bear_type(type)
   return type
 end
 
+def takes_fish(fish, river)
+  @stomach << fish
+end
 
 def bear_roar
   return "roar"
@@ -26,5 +29,6 @@ end
 def bear_food_count()
   return @stomach.count()
 end
+
 
 end

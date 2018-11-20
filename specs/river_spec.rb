@@ -7,8 +7,16 @@ require_relative('../river.rb')
 class RiverTest < Minitest::Test
 
   def setup
-    @fishes = []
-    @river = River.new("Clyde")
+    @fish1 = Fish.new("George")
+    @fish2 = Fish.new("Stephen")
+    @fish3 = Fish.new("Angus")
+    @fish4 = Fish.new("Agnes")
+    @fish5 = Fish.new("Sammy")
+
+
+    fish_names = [@fish1, @fish2, @fish3, @fish4, @fish5]
+
+    @river = River.new("Clyde", fish_names)
 
   end
 
@@ -17,10 +25,18 @@ def test_river_name()
 
 end
 
+def test_find_fish_by_name()
+  fish = @river.find_fish_by_name("Angus")
+  assert_equal("Angus", fish.name)
+end
+
 def test_river_fish_count()
   count = @river.count_fish()
-    assert_equal(0, count)
+    assert_equal(5, count)
   end
 
+# def test_fish_stole()
+#
+# end
 
 end

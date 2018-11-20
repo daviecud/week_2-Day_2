@@ -28,4 +28,11 @@ def test_bear_food_count
   assert_equal(0, food_count)
 end
 
+def test_bear_takes_fish()
+  fish = Fish.new("Nemo")
+  @bear.takes_fish("Nemo", "Clyde")
+  assert_equal(1, @bear.bear_food_count())
+end
+
+
 end
